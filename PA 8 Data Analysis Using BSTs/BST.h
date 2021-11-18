@@ -14,6 +14,10 @@ public:
 	~BST();
 
 	Node* getRoot();
+	void setRoot(Node* newRoot);
 	void insert(string newData, int newUnits);
+
+	TransactionNode& findSmallest();
+	TransactionNode& findLargest();
 };
 

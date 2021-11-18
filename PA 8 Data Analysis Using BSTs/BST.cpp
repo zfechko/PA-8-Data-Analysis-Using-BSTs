@@ -31,7 +31,7 @@ void BST::insert(TransactionNode* pTree, TransactionNode* newNode)
 {
 	if (pRoot == nullptr)
 	{
-		pRoot = newNode;
+		setRoot(newNode);
 	}
 	else
 	{
@@ -69,6 +69,11 @@ Node* BST::getRoot()
 	return pRoot;
 }
 
+void BST::setRoot(Node* newRoot)
+{
+	pRoot = newRoot;
+}
+
 void BST::inOrderTraversal(Node* pTree)
 {
 	if (pTree != nullptr)
@@ -77,4 +82,24 @@ void BST::inOrderTraversal(Node* pTree)
 		pTree->printData();
 		inOrderTraversal(pTree->getRight());
 	}
+}
+
+TransactionNode& BST::findSmallest()
+{
+	TransactionNode* traverser = dynamic_cast<TransactionNode*>(pRoot);
+	while (traverser->getLeft() != nullptr)
+	{
+		traverser = dynamic_cast<TransactionNode*>(traverser->getLeft());
+	}
+	return *traverser;
+}
+
+TransactionNode& BST::findLargest()
+{
+	TransactionNode* traverser = dynamic_cast<TransactionNode*>(pRoot);
+	while (traverser->getRight() != nullptr)
+	{
+		traverser = dynamic_cast<TransactionNode*>(traverser->getRight());
+	}
+	return *traverser;
 }
