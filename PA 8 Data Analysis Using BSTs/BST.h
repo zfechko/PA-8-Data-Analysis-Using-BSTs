@@ -14,6 +14,6 @@ public:
 	~BST();
 
 	Node* getRoot();
-
+	void insert(string newData, int newUnits);
 };
 
