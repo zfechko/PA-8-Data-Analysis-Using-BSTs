@@ -84,6 +84,11 @@ void BST::inOrderTraversal(Node* pTree)
 	}
 }
 
+void BST::inOrderTraversal()
+{
+	inOrderTraversal(pRoot);
+}
+
 TransactionNode& BST::findSmallest()
 {
 	TransactionNode* traverser = dynamic_cast<TransactionNode*>(pRoot);

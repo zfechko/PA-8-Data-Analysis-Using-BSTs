@@ -16,6 +16,7 @@ public:
 	Node* getRoot();
 	void setRoot(Node* newRoot);
 	void insert(string newData, int newUnits);
+	void inOrderTraversal();
 
 	TransactionNode& findSmallest();
 	TransactionNode& findLargest();

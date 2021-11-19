@@ -22,5 +22,5 @@ void TransactionNode::setUnits(int newUnits)
 
 void TransactionNode::printData()
 {
-	cout << " " << this->mData << " : " << this->units << endl;
+	cout << " " << this->mData << " : " << this->units << " units." << endl;
 }
